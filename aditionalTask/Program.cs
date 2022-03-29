@@ -1,31 +1,23 @@
-﻿using System;
-using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace aditionalTask
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            Assembly assembly = null;
-            assembly = Assembly.LoadFrom("Task2");
-
-            Console.WriteLine("Info of assembly: ");
-            Console.WriteLine("Full name: " + assembly.FullName);
-            Console.WriteLine("Location: " + assembly.Location);
-
-            Console.WriteLine(new string('-', 60));
-
-            Type[] types = assembly.GetTypes();
-            Console.WriteLine("Info of types: ");
-            foreach (var item in types)
-            {
-                Console.WriteLine("Full name: " + item.FullName);
-                Console.WriteLine("Base type: " + item.BaseType);
-                Console.WriteLine("It is class: " + item.IsClass);
-                Console.WriteLine("It is enum: " + item.IsEnum);
-                Console.WriteLine(new string('*', 40));
-            }
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }
