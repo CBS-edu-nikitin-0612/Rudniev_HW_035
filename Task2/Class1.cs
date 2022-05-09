@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace Task2
 {
     public class Temperature
@@ -43,7 +42,7 @@ namespace Task2
         {
             this.unit = unit;
             Current = current;
-            Console.WriteLine("Temperature obj created!");
+            //Console.WriteLine("Temperature obj created!");
         }
 
         public override string ToString()
